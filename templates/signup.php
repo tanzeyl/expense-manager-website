@@ -37,23 +37,22 @@
 						<div class="panel-heading"><p style="text-align: center; font-size: 30px">Sign Up</p><hr></div>
 					</div>
 					<div class="container-fluid">
-						<form>
+						<form method="POST" action="signup_script.php">
 							<b>Name:</b>
 							<div class="form-group">
-								<input type="text" name="name" class="form-control" placeholder="Name">
+								<input type="text" name="name" class="form-control" placeholder="Name" required>
 							</div>
 							<b>Email:</b>
 							<div class="form-group">
-								<input type="text" name="name" class="form-control" placeholder="Enter a valid Email Address" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
+								<input type="text" name="email" class="form-control" placeholder="Enter a valid Email Address" required>
 							</div>
 							<b>Password:</b>
 							<div class="form-group">
-								<input type="text" name="name" class="form-control" placeholder="Password (Minimum 6 characters)" pattern=".{8,}">
+								<input type="password" name="password" class="form-control" placeholder="Password (Minimum 6 characters)" pattern=".{8,}" required>
 							</div>
 							<b>Phone:</b>
 							<div class="form-group">
-								<input type="text" name="name" class="form-control" placeholder="Enter a valid Phone Number"
-								pattern="[0-9]{10}">
+								<input type="tel" name="phone" class="form-control" placeholder="Enter a valid Phone Number" pattern="[0-9]{10}" required>
 							</div>
 							<button class="btn btn-info btn-block">Submit</button><br>
 						</form>

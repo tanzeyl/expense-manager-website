@@ -29,3 +29,8 @@ footer {
 .panel_body {
 	margin-left: 15px;
 }
+.bg-color {
+	background: #DCDCDC;
+	height: 100%;
+	width: 100%;
+}

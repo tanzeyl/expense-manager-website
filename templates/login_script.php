@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "expensemanagerwebsite") or die(mysqli_error($con));
+require 'common.php';
 $email = mysqli_real_escape_string($con, $_POST['email']);
 $email_q = "SELECT id from users where email = $email";
 $email_q_res = mysqli_query($con, $email_q);

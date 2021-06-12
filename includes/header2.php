@@ -32,10 +32,10 @@ in"></span> Logout</a></li>
 ?>
 <li><a href="signup.php"><span class="glyphicon glyphicon-info-sign"></span>
 About Us</a></li>
-<li><a href="signup.php"><span class="glyphicon glyphicon-user"></span>
-Sign Up</a></li>
+<li><a href="signup.php"><span class="glyphicon glyphicon-cog"></span>
+Chnage Password</a></li>
 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>
-Login</a></li>
+Logout</a></li>
 <?php
 }
 ?>

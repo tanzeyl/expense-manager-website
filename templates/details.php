@@ -18,24 +18,49 @@
 			<div class="col-xs-8 col-xs-offset-2">
 				<div class="panel">
 					<div class="panel-body">
+						<form method="POST" action="details_script.php">
 						<b>Title</b>
 						<div class="form-group">
-							<input type="text" name="plan_name" class="form-control" placeholder="Enter title (Ex: Trip To Goa" required>
+							<input type="text" name="title" class="form-control" placeholder="Enter title (Ex: Trip To Goa" required>
 						</div>
 						<div class="row">
 							<div class="col-xs-6">
 								<b>From</b>
 								<div class="form-group">
-									<input type="text" name="from" class="form-control" placeholder="DD/MM/YY" required>
+									<input type="date" name="from" class="form-control" min="2019-04-01" max="2022-01-01" required>
 								</div>
 							</div>
 							<div class="col-xs-6">
 								<b>To</b>
 								<div class="form-group">
-									<input type="text" name="from" class="form-control" placeholder="DD/MM/YY" required>
+									<input type="date" name="to" class="form-control" min="2019-04-01" max="2024-02-01" required>
 								</div>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-xs-8">
+								<b>Initial Budget</b>
+								<div class="form-group">
+									<input type="text" name="i_budget" class="form-control" required>
+								</div>
+							</div>
+							<div class="col-xs-4">
+								<b>Number of people</b>
+								<div class="form-group">
+									<input type="text" name="n_people" class="form-control" required>
+								</div>
+							</div>
+						</div>
+						<b>Person 1</b>
+						<div class="form-group">
+							<input type="text" name="person1" class="form-control" required>
+						</div>
+						<b>Person 2</b>
+						<div class="form-group">
+							<input type="text" name="person2" class="form-control" required>
+						</div>
+						</form>
+						<a href="details_script.php"><button class="btn btn-success btn-block">Submit</button></a>
 					</div>
 				</div>
 			</div>

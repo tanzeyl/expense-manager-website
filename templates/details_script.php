@@ -1,7 +1,12 @@
 <?php
 require '../includes/common.php';
-$name = mysqli_real_escape_string($con, $_POST['name']);
-$email = mysqli_real_escape_string($con, $_POST['email']);
+$title = mysqli_real_escape_string($con, $_POST['title']);
+$from = mysqli_real_escape_string($con, $_POST['from']);
+$to = mysqli_real_escape_string($con, $_POST['to']);
+$i_budget = mysqli_real_escape_string($con, $_POST['i_budget']);
+$n_people = mysqli_real_escape_string($con, $_POST['n_people']);
+$person1 = mysqli_real_escape_string($con, $_POST['person1']);
+$person2 = mysqli_real_escape_string($con, $_POST['person2']);
 $regrex_email = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i";
 if (!preg_match($regrex_email, $email))
 {

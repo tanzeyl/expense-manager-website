@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width" initial-scale=1>
 	<link rel="stylesheet" type="text/css" href="../static/style.css">
-	<title>Create A Plan</title>
+	<title>Plan Details</title>
 </head>
 <body class="bg-color">
 	<?php
@@ -21,19 +21,19 @@
 					<div class="panel-body">
 					</div>
 					<div class="container-fluid">
-						<form method="POST" action=".php">
+						<form method="POST" action="details.php">
 							<b>Initial Budget:</b>
 							<div class="form-group">
-								<input type="number" name="budget" class="form-control" placeholder="Initial Budget (Ex: 4000)" min="0" oninput="validity.valid||(value='');" required>
+								<input type="number" name="budget" class="form-control" placeholder="Initial Budget (Ex: 4000)" min="0" required>
 							</div>
 							<b>How many people do you want in your group?</b>
 							<div class="form-group">
-								<input type="number" name="n_people" class="form-control" placeholder="Number of people"
-								min="0" oninput="validity.valid||(value='');" required>
+								<input type="number" name="people" class="form-control" placeholder="Number of people"
+								min="0" required>
 							</div>
 						</form>
 					</div>
-					<a href="details.php" style="color: black;"><button class="btn bt-col btn-block">Next</button><br></a>
+					<a href="details.php"><button class="btn bt-col btn-block">Next</button><br></a>
 				</div>
 			</div>
 		</div>

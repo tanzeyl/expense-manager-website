@@ -42,3 +42,6 @@ footer {
 .bt-col:hover {
 	background-color: #1e6f72;
 }
+.btn-border {
+	border: 1px solid blue;
+}

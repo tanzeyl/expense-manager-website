@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "expense-manager-website") or die(mysqli_error($con));
+$con = mysqli_connect("localhost", "root", "", "expensemanagerwebsite") or die(mysqli_error($con));
 $name = mysqli_real_escape_string($con, $_POST['name']);
 $email = mysqli_real_escape_string($con, $_POST['email']);
 $regrex_email = "/^[a-z0-9._]+@[a-z0-9.]+.[a-z]{2,3}";

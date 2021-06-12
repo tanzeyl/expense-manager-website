@@ -20,5 +20,5 @@ if (strlen($password) < 6)
 }
 $pass_word = md5($password);
 $phone_number = mysqli_real_escape_string($con, $_POST['phone']);
-echo ("<script>location.href='index.php'</script>")
+echo ("<script>location.href='home.php'</script>")
 ?>

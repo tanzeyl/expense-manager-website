@@ -21,18 +21,19 @@
 					<div class="panel-body">
 					</div>
 					<div class="container-fluid">
-						<form method="POST" action="signup_script.php">
+						<form method="POST" action=".php">
 							<b>Initial Budget:</b>
 							<div class="form-group">
-								<input type="text" name="budget" class="form-control" placeholder="Initial Budget (Ex: 4000)" required>
+								<input type="number" name="budget" class="form-control" placeholder="Initial Budget (Ex: 4000)" min="0" oninput="validity.valid||(value='');" required>
 							</div>
 							<b>How many people do you want in your group?</b>
 							<div class="form-group">
-								<input type="text" name="n_people" class="form-control" placeholder="Number of people" required>
+								<input type="number" name="n_people" class="form-control" placeholder="Number of people"
+								min="0" oninput="validity.valid||(value='');" required>
 							</div>
 						</form>
 					</div>
-					<button class="btn bt-col btn-block">Next</button><br>
+					<a href="details.php" style="color: black;"><button class="btn bt-col btn-block">Next</button><br></a>
 				</div>
 			</div>
 		</div>

@@ -33,7 +33,7 @@ in"></span> Logout</a></li>
 <li><a href="signup.php"><span class="glyphicon glyphicon-info-sign"></span>
 About Us</a></li>
 <li><a href="signup.php"><span class="glyphicon glyphicon-cog"></span>
-Chnage Password</a></li>
+Change Password</a></li>
 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>
 Logout</a></li>
 <?php

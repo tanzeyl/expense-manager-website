@@ -34,8 +34,11 @@ footer {
 	height: 100%;
 	width: 100%;
 }
-.panel-primary > .panel-heading {
-    color: yellow !important;
-    background-color: yellow !important;
-    border-color: #F6E3CE !important;
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #1e6f72;
+    color: white;
+}
+.bt-col:hover {
+	background-color: #1e6f72;
 }

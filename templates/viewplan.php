@@ -79,18 +79,18 @@ $row = mysqli_fetch_array($home_q_res);
 								</center>
 							</div>
 							<div class="panel-body">
-								<form>
+								<form method="POST" action="viewplan_script.php">
 									<b>Title</b>
 									<div class="form-group">
-										<input type="text" name="name" class="form-control" placeholder="Expense name" required>
+										<input type="text" name="exp_name" class="form-control" placeholder="Expense name" required>
 									</div>
 									<b>Date</b>
 									<div class="form-group">
-										<input type="text" name="name" class="form-control" placeholder="Between <?php echo $row['_from']; ?> and <?php echo $row['_to']; ?>" required>
+										<input type="text" name="date" class="form-control" placeholder="Between <?php echo $row['_from']; ?> and <?php echo $row['_to']; ?>" required>
 									</div>
 									<b>Amount Spent</b>
 									<div class="form-group">
-										<input type="text" name="name" class="form-control" placeholder="Amount Spent" required>
+										<input type="text" name="amount" class="form-control" placeholder="Amount Spent" required>
 									</div>
 								</form>
 							</div>

@@ -21,6 +21,6 @@ if (strlen($password) <= 6)
 $pass_word = md5($password);
 $phone_number = mysqli_real_escape_string($con, $_POST['phone']);
 $signup_q = "INSERT INTO `users` (`id`, `name`, `email`, `pass_word`, `phone_number`) VALUES (NULL, '$name', '$email', '$pass_word', '$phone_number')";
-$signup_q_res = mysqli_query($con, $signup_q);
+$signup_q_res = mysqli_query($con, $signup_q) or die(mysqli_error($con));
 echo ("<script>location.href='home.php'</script>");
 ?>

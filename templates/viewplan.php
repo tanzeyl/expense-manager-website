@@ -13,7 +13,7 @@ $row = mysqli_fetch_array($home_q_res);
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width" initial-scale=1>
 	<link rel="stylesheet" type="text/css" href="../static/style.css">
-	<title>Home Page</title>
+	<title>View Plan</title>
 </head>
 <body class="bg-color">
 	<?php
@@ -69,7 +69,7 @@ $row = mysqli_fetch_array($home_q_res);
 				</div>
 			</div>
 			<div class="col-xs-4 col-xs-offset-2">
-				<button class="btn btn-default btn-lg">Expense Distribution</button><br><br><br><br>
+				<a href="expensedist.php"><button class="btn btn-default btn-lg">Expense Distribution</button></a><br><br>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="panel panel-success">
@@ -90,8 +90,21 @@ $row = mysqli_fetch_array($home_q_res);
 									</div>
 									<b>Amount Spent</b>
 									<div class="form-group">
-										<input type="text" name="amount" class="form-control" placeholder="Amount Spent" required>
+										<input type="text" name="amount" class="form-control" placeholder="Amount Spent" required min="0">
 									</div>
+									<div class="dropdown">
+  										<button class="btn btn-default dropdown-toggle btn-block" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" name="person">Chose<span class="caret" style="float: right; font-size: 20px;"></span></button>
+  										<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    										<li></li>
+										    <li><a href="#"><?php echo $row['person1']; ?></a></li>
+										    <li><a href="#"><?php echo $row['person2']; ?></a></li>
+										</ul>
+									</div>
+									<b>Upload Bill:</b>
+									<div class="form-group">
+										<input type="file" name="uploadedimage" class="form-control">
+									</div>
+									<button class="btn btn-default btn-block" style="color: #1e6f72; border: 1px solid #1e6f72;">Add</button>
 								</form>
 							</div>
 						</div>
@@ -100,6 +113,7 @@ $row = mysqli_fetch_array($home_q_res);
 			</div>
 		</div>
 	</div>
+	<br><br>
 	<?php
 	}
 	?>

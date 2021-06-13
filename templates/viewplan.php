@@ -92,11 +92,10 @@ $row = mysqli_fetch_array($home_q_res);
 									<div class="form-group">
 										<input type="text" name="amount" class="form-control" placeholder="Amount Spent" required min="0">
 									</div>
-									<div class="dropdown">
-  										<select name="person">
-        									<option value="<?php $row['person1']; ?>"><?php echo $row['person1']; ?></option>
-        									<option value="<?php $row['person2']; ?>"><?php echo $row['person2']; ?></option>
-    									</select>
+									<b>Your name</b>
+									<div class="form-group">
+										<input type="text" name="person" class="form-control" placeholder="Name should be same as before. Mind the cases." required min="0">
+									</div>	
 									<b>Upload Bill:</b>
 									<div class="form-group">
 										<input type="file" name="file" class="form-control">

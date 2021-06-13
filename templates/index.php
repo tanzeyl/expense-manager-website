@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width" initial-scale=1>
 	<link rel="stylesheet" type="text/css" href="../static/style.css">
-	<title>Control Budget</title>
+	<title>Ct₹l Budget</title>
 </head>
 <body>
 	<?php

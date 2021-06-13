@@ -45,32 +45,49 @@ $row = mysqli_fetch_array($home_q_res);
 		<div class="row">
 			<div class="col-xs-4 col-xs-offset-2">
 				<div class="panel panel-success">
-						<div class="panel-heading"><p style="text-align: center; font-size: 20px;"><?php echo $row['title'];	?></p>
-							<p style="float: right;"><span class = "glyphicon glyphicon-user"></span><?php echo $row['n_people']; ?></p>
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-5">
+									<center>
+									<p style="text-align: center; font-size: 20px;"><?php echo $row['title']; ?></p>
+									</center>	
+								</div>
+								<div class="col-xs-3" style="float: right;">
+									<p style="font-size: 20px;"><span class = "glyphicon glyphicon-user"></span><?php echo " ".$row['n_people']; ?></p>
+								</div>
+							</div>
 						</div>
 					<div class="panel-body">
-					</div>
-					<div class="container-fluid">
-						<form method="POST" action="details.php">
-							<b>Initial Budget:</b>
-							<div class="form-group">
-								<input type="number" name="budget" class="form-control" placeholder="Initial Budget (Ex: 4000)" min="0" required>
+						<div class="row">
+							<div class="col-xs-3">
+								<b>Budget:</b>
 							</div>
-							<b>How many people do you want in your group?</b>
-							<div class="form-group">
-								<input type="number" name="people" class="form-control" placeholder="Number of people"
-								min="0" required>
+							<div class="col-xs-3 col-xs-offset-6">
+								<p>₹ <?php echo $row['i_budget'] ?></p>
 							</div>
-						</form>
+						</div>
+						<div class="row">
+							<div class="col-xs-3">
+								<b>Date:</b>
+							</div>
+							<div class="col-xs-7 col-xs-offset-2">
+								<p><?php echo $row['_from']." to ".$row['_to'] ?></p>
+							</div>
+						</div>
 					</div>
-					<a href="details.php"><button class="btn bt-col btn-block">Next</button><br></a>
+					<a href="viewplan.php"><button class="btn bt-col btn-block" style="border: 1px #1e6f72 solid;">View Plan</button><br></a>
 				</div>
 			</div>
 		</div>
 	</div>
 	<?php
 	}
-	?>
+	?><br><br><br><br><br><br><br><br>
+	<div class="row">
+		<div class="col-xs-1 col-xs-offset-11">
+			<span class="glyphicon glyphicon-plus-sign fa-lg" style="float: right; font-size: 40px; color: #1e6f72;"></span>
+		</div>
+	</div>
 	<?php
 	include '../includes/footer.php';
 	?>

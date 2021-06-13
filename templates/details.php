@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width" initial-scale=1>
 	<link rel="stylesheet" type="text/css" href="../static/style.css">
-	<title>Create A Plan</title>
+	<title>Plan Details</title>
 </head>
 <body class="bg-color">
 	<?php
@@ -47,8 +47,13 @@
 							<div class="col-xs-4">
 								<b>Number of people</b>
 								<div class="form-group">
-									<input type="text" name="n_people" class="form-control" required>
+									<input type="text" name="n_people" class="form-control" required min="1" max="2">
 								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-2 col-xs-offset-10">
+						<button formaction="details.php" class="btn btn-primary">Enter</button>
 							</div>
 						</div>
 						<b>Person 1</b>
@@ -59,8 +64,8 @@
 						<div class="form-group">
 							<input type="text" name="person2" class="form-control" required>
 						</div>
+						<button class="btn btn-success btn-block">Submit</button>
 						</form>
-						<a href="details_script.php"><button class="btn btn-success btn-block">Submit</button></a>
 					</div>
 				</div>
 			</div>

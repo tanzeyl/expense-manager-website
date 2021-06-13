@@ -79,7 +79,7 @@ $row = mysqli_fetch_array($home_q_res);
 								</center>
 							</div>
 							<div class="panel-body">
-								<form method="POST" action="viewplan_script.php">
+								<form method="POST" action="viewplan_script.php" enctype="multipart/form-data">
 									<b>Title</b>
 									<div class="form-group">
 										<input type="text" name="exp_name" class="form-control" placeholder="Expense name" required>
@@ -93,13 +93,10 @@ $row = mysqli_fetch_array($home_q_res);
 										<input type="text" name="amount" class="form-control" placeholder="Amount Spent" required min="0">
 									</div>
 									<div class="dropdown">
-  										<button class="btn btn-default dropdown-toggle btn-block" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" name="person">Chose<span class="caret" style="float: right; font-size: 20px;"></span></button>
-  										<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    										<li></li>
-										    <li><a href="#"><?php echo $row['person1']; ?></a></li>
-										    <li><a href="#"><?php echo $row['person2']; ?></a></li>
-										</ul>
-									</div>
+  										<select name="person">
+        									<option value="<?php echo $row['person1']; ?>"><?php echo $row['person1']; ?></option>
+        									<option value="<?php echo $row['person1']; ?>"><?php echo $row['person2']; ?></option>
+    									</select>
 									<b>Upload Bill:</b>
 									<div class="form-group">
 										<input type="file" name="uploadedimage" class="form-control">

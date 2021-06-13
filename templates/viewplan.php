@@ -94,14 +94,14 @@ $row = mysqli_fetch_array($home_q_res);
 									</div>
 									<div class="dropdown">
   										<select name="person">
-        									<option value="<?php echo $row['person1']; ?>"><?php echo $row['person1']; ?></option>
-        									<option value="<?php echo $row['person1']; ?>"><?php echo $row['person2']; ?></option>
+        									<option value="<?php $row['person1']; ?>"><?php echo $row['person1']; ?></option>
+        									<option value="<?php $row['person2']; ?>"><?php echo $row['person2']; ?></option>
     									</select>
 									<b>Upload Bill:</b>
 									<div class="form-group">
-										<input type="file" name="uploadedimage" class="form-control">
+										<input type="file" name="file" class="form-control">
 									</div>
-									<button class="btn btn-default btn-block" style="color: #1e6f72; border: 1px solid #1e6f72;">Add</button>
+									<button class="btn btn-default btn-block" style="color: #1e6f72; border: 1px solid #1e6f72;" name="submit" value="upload">Add</button>
 								</form>
 							</div>
 						</div>

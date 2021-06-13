@@ -20,30 +20,13 @@ $row = mysqli_fetch_array($home_q_res);
 	include '../includes/header2.php';
 	?>
 	<?php
-	if (mysqli_fetch_array($home_q_res) == 0)
+	if (mysqli_fetch_array($home_q_res) != 0)
 	{
 	?>
-	<h1 style="margin-top: 40px; margin-left: 60px;">You do not have any active plans.</h1>
+	<br><br>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-4 col-xs-offset-4">
-				<div class="panel panel-default" style="height: 200px; margin-top: 100px;">
-					<div class="panel-body">
-						<center style="margin-top: 25%;">
-						<a href="createplan.php"><span class="glyphicon glyphicon-plus-sign"></span>Create a new plan</a>
-						</center>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<?php
-	} else {
-	?>
-	<h1 style="margin-top: 40px; margin-left: 60px;">Your plans</h1>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-4 col-xs-offset-2">
+			<div class="col-xs-6">
 				<div class="panel panel-success">
 						<div class="panel-heading">
 							<div class="row">
@@ -68,26 +51,58 @@ $row = mysqli_fetch_array($home_q_res);
 						</div>
 						<div class="row">
 							<div class="col-xs-3">
+								<b>Remianing Amount:</b>
+							</div>
+							<div class="col-xs-3 col-xs-offset-6">
+								<p>₹ <?php echo $row['i_budget'] ?></p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3">
 								<b>Date:</b>
 							</div>
-							<div class="col-xs-7 col-xs-offset-2">
+							<div class="col-xs-5 col-xs-offset-4">
 								<p><?php echo $row['_from']." to ".$row['_to'] ?></p>
 							</div>
 						</div>
 					</div>
-					<a href="viewplan.php"><button class="btn bt-col btn-block" style="border: 1px #1e6f72 solid;">View Plan</button><br></a>
+				</div>
+			</div>
+			<div class="col-xs-4 col-xs-offset-2">
+				<button class="btn btn-default btn-lg">Expense Distribution</button><br><br><br><br>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<center>
+									<a href="#" style="color: white;">Add New Expense</a>
+								</center>
+							</div>
+							<div class="panel-body">
+								<form>
+									<b>Title</b>
+									<div class="form-group">
+										<input type="text" name="name" class="form-control" placeholder="Expense name" required>
+									</div>
+									<b>Date</b>
+									<div class="form-group">
+										<input type="text" name="name" class="form-control" placeholder="Between <?php echo $row['_from']; ?> and <?php echo $row['_to']; ?>" required>
+									</div>
+									<b>Amount Spent</b>
+									<div class="form-group">
+										<input type="text" name="name" class="form-control" placeholder="Amount Spent" required>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<?php
 	}
-	?><br><br><br><br><br><br><br><br>
-	<div class="row">
-		<div class="col-xs-1 col-xs-offset-11">
-			<a href="createplan.php"><span class="glyphicon glyphicon-plus-sign fa-lg" style="font-size: 40px; color: #1e6f72;"></span></a>
-		</div>
-	</div>
+	?>
 	<?php
 	include '../includes/footer.php';
 	?>

@@ -1,7 +1,14 @@
-<select name="Courses Titles" id="myCourses">
-        <option value="C++">c++</option>
-        <option value="Placement">Placement</option>
-        <option value="Java">Java</option>
-        <option value="Python">Python</option>
-    </select>
-  
+$file = $_FILES['uploadedimage'];
+$file_name = $file['name'];
+$file_type = $file ['type'];
+$file_size = $file ['size'];
+$file_path = $file ['tmp_name'];
+$qurey = "INSERT INTO `expenses` (`id`, `title`, `date`, `amount`, `person`, `file`) VALUES (NULL, '$title', '$date', '$amount', '$person', '$file_name')";
+echo $title."<br>";
+echo $date."<br>";
+echo $amount."<br>";
+echo $person."<br>";
+echo $file_name."<br>";
+echo $file_type."<br>";
+echo $file_size."<br>";
+echo $file_path."<br>";

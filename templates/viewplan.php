@@ -69,7 +69,8 @@ $row = mysqli_fetch_array($home_q_res);
 				</div>
 			</div>
 			<div class="col-xs-4 col-xs-offset-2">
-				<a href="expensedist.php"><button class="btn btn-default btn-lg">Expense Distribution</button></a><br><br>
+				<a href="expensedist.php"><button class="btn btn-default btn-lg" style="color: #1e6f72; border: 1px solid #1e6f72;">Expense Distribution</button></a><br><br>
+				<a href="allplans.php"><button class="btn btn-default btn-lg" style="color: #1e6f72; border: 1px solid #1e6f72;">View All Plans</button></a><br><br>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="panel panel-success">

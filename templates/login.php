@@ -28,7 +28,7 @@
 							</div>
 							<b>Password:</b>
 							<div class="form-group">
-								<input type="password" name="password" class="form-control" placeholder="Password" pattern=".{8,}" required>
+								<input type="password" name="password" class="form-control" placeholder="Password" required>
 							</div>
 							<button class="btn btn-info btn-block">Login</button><br>
 						</form>

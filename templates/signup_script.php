@@ -7,12 +7,12 @@ if (!preg_match($regrex_email, $email))
 {
 	echo "<script>alert('This email is invalid.')</script>";
 }
-// $email_q = "SELECT id from users WHERE email = $email";
-// $email_q_res = mysqli_query($con, $email_q) or die(mysqli_error($con));
-// if (mysqli_num_rows($email_q_res) != 0)
-// {
-// 	echo "<script>alert('Email already exists. Please enter a valid email or login to existing account.')</script>";
-// }
+$email_q = "SELECT id from users WHERE email = '$email'";
+$email_q_res = mysqli_query($con, $email_q) or die(mysqli_error($con));
+if (mysqli_num_rows($email_q_res) != 0)
+{
+	echo "<script>alert('Email already exists. Please enter a valid email or login to existing account.')</script>";
+}
 $password = mysqli_real_escape_string($con, $_POST['password']);
 if (strlen($password) <= 6)
 {

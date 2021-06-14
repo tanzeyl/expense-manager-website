@@ -12,8 +12,6 @@
 <body class="bg-color">
 	<?php
 	include '../includes/header2.php';
-	?>
-	<?php
 	require '../includes/common.php';
 	$all_q = "SELECT * FROM expenses";
 	$all_q_res = mysqli_query($con, $all_q) or die(mysqli_error($con));
@@ -40,12 +38,12 @@
 	{
 	?>
 	<h1 style="margin-top: 40px; margin-left: 60px;">Your expenses</h1>
-	<div class="row">
+	
 		<?php
-		while ($n_rows != 0) {
-			$row = mysqli_fetch_array($con, $all_q_res);
-		?>
-			<div class="col-xs-3">
+		while ($row = mysqli_fetch_array($all_q_res)) { ?>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-3">
 				<div class="panel panel-default">
 						<div class="panel-heading">
 							<div class="row">
@@ -58,45 +56,43 @@
 						</div>
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-xs-3">
+							<div class="col-xs-5">
 								<b>Amount:</b>
 							</div>
-							<div class="col-xs-3 col-xs-offset-6">
+							<div class="col-xs-3 col-xs-offset-3">
 								<p>₹ <?php echo $row['amount'] ?></p>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-3">
+							<div class="col-xs-5">
 								<b>Paid by</b>
 							</div>
-							<div class="col-xs-3">
+							<div class="col-xs-3 col-xs-offset-3">
 								<p><?php echo $row['person']; ?></p>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-3">
+							<div class="col-xs-4">
 								<b>Paid on</b>
 							</div>
-							<div class="col-xs-7 col-xs-offset-2">
+							<div class="col-xs-4 col-xs-offset-4">
 								<p><?php echo $row['date']; ?></p>
 							</div>
 						</div>
-						<?php
-						if ($row['file']) {
-						?>
-						<div class="panel-footer">
-							<p><a href="file.php">Show bill</a></p>
 						</div>
-						<?php
-						} else {
-						?>
 						<div class="panel-footer">
-							<p>You have not uploaded any bill.</p>
+							<div class="row">
+								<div class="col-xs-12">
+									<center>
+										<p style="font-size: 20px;"><a href="file.php">Show bill</a></p>
+									</center>
+								</div>
+							</div>
 						</div>
-					</div>
-					<a href="viewplan.php"><button class="btn bt-col btn-block" style="border: 1px #1e6f72 solid;">View Plan</button><br></a>
 				</div>
+				<br><br>
 			</div>
+		</div>
 		</div>
 		<?php
 		}

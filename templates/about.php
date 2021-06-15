@@ -12,7 +12,7 @@
 <body class="bg-color">
 	<?php
 	include '../includes/header.php';
-	?>
+	?><br><br><br><br><br><br>
 	<div class="container">
 	<div class="row">
 		<div class="container-fluid">

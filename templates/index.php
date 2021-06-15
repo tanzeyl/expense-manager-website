@@ -20,7 +20,7 @@
 					<center>
 						<div id="banner-content">
 							<h1>We help you to control your budget.</h1><br>
-							<a href="login.html" class="”btn btn-info btn-lg active">Start Today</a>
+							<a href="login.php" class="”btn btn-info btn-lg active">Start Today</a>
 						</div>
 					</center>
 				</div>

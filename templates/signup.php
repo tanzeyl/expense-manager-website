@@ -18,7 +18,7 @@
 			<div class="col-xs-4 col-xs-offset-4">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<div class="panel-heading"><p style="text-align: center; font-size: 30px">Sign Up</p><hr></div>
+						<div class="panel-heading"><p style="text-align: center; font-size: 30px">Sign Up</p></div>
 					</div>
 					<div class="container-fluid">
 						<form method="POST" action="signup_script.php">
@@ -38,7 +38,7 @@
 							<div class="form-group">
 								<input type="tel" name="phone" class="form-control" placeholder="Enter a valid Phone Number" pattern="[0-9]{10}" required>
 							</div>
-							<button class="btn btn-info btn-block">Submit</button><br>
+							<button class="btn btn-block" style="background: #1e6f72; color: white;">Submit</button><br>
 						</form>
 					</div>
 				</div>

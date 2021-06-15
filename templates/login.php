@@ -12,15 +12,13 @@
 <body>
 	<?php
 	include '../includes/header.php';
-	?>
+	?><br><br><br><br>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-4 col-xs-offset-4">
 				<div class="panel panel-default">
+					<div class="panel-heading" style="background: white; color: black;"><p style="text-align: center; font-size: 30px">Login</p></div>
 					<div class="panel-body">
-						<div class="panel-heading"><p style="text-align: center; font-size: 30px">Login</p><hr></div>
-					</div>
-					<div class="container-fluid">
 						<form method="POST" action="login_script.php">
 							<b>Email:</b>
 							<div class="form-group">
@@ -30,12 +28,12 @@
 							<div class="form-group">
 								<input type="password" name="password" class="form-control" placeholder="Password" required>
 							</div>
-							<button class="btn btn-info btn-block">Login</button><br>
+							<button class="btn btn-default btn-block" style="color: white; background: #1e6f72;">Login</button><br>
 						</form>
+					</div>
 						<div class="panel-footer">
 								<p>Don't have an account?<a href="signup.php">Click here to Sign Up.</a></p>
 						</div>
-					</div>
 				</div>
 			</div>
 		</div>

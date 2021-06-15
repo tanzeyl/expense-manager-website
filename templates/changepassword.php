@@ -28,11 +28,11 @@
 							</div>
 							<b>New password</b>
 							<div class="form-group">
-								<input type="password" name="new" class="form-control password" placeholder="New password" pattern=".{8,}" required>
+								<input type="password" name="new" class="form-control" placeholder="New password" pattern=".{8,}" required>
 							</div>
 							<b>Confirm New Password</b>
 							<div class="form-group">
-								<input type="password" name="new_c" class="form-control confirmpassword" placeholder="Re-enter new passowrd" pattern=".{8,}" autocomplete="new_c" required>
+								<input type="password" name="new_c" class="form-control" placeholder="Re-enter new passowrd" pattern=".{8,}" autocomplete="new_c" required>
 							</div>
 							<button class="btn bt-col btn-block" style="color: white; border: 1px solid #1e6f72; background: #1e6f72;" name="submit" value="upload">Add</button><br>
 						</form>

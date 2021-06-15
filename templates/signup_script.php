@@ -5,7 +5,8 @@ $email = mysqli_real_escape_string($con, $_POST['email']);
 $regrex_email = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i";
 if (!preg_match($regrex_email, $email))
 {
-	echo "<script>alert('This email is invalid.')</script>";
+	echo 'This email is invalid.';
+	echo ("<script>location.href='signup.php'</script>");
 }
 $email_q = "SELECT id from users WHERE email = '$email'";
 $email_q_res = mysqli_query($con, $email_q) or die(mysqli_error($con));

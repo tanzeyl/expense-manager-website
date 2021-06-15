@@ -24,7 +24,7 @@
 				<p><b>Mobile:</b> 9988776655</p>
 			</div>
 			<div class="col-xs-6">
-				<h1>Why chose use?</h1>
+				<h1>Why chose us?</h1>
 				<p>We provide with a pre-dominant way to controland manage your budget estimations with ease of accessing multiple users.</p>
 			</div>
 	</div>

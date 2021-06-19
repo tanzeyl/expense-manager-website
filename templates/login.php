@@ -15,7 +15,7 @@
 	?><br><br><br><br>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-4 col-xs-offset-4">
+			<div class="col-xs-12 col-md-4 col-md-offset-4">
 				<div class="panel panel-default">
 					<div class="panel-heading" style="background: white; color: black;"><p style="text-align: center; font-size: 30px">Login</p></div>
 					<div class="panel-body">

@@ -22,7 +22,7 @@
 	<h1 style="margin-top: 40px; margin-left: 60px;">You have not added any expenses yet.</h1>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-lg-4 col-lg-offset-4">
+			<div class="col-xs-12 col-md-4 col-md-offset-4">
 				<div class="panel panel-default" style="height: 200px; margin-top: 100px;">
 					<div class="panel-body">
 						<center style="margin-top: 25%;">

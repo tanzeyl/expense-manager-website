@@ -2,7 +2,7 @@
 require '../includes/common.php';
 $home_q = "SELECT * FROM usersplans";
 $home_q_res = mysqli_query($con, $home_q) or die(mysqli_error($con));
-$row = mysqli_fetch_array($home_q_res);
+$n_rows = mysqli_num_rows($home_q_res);
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +20,7 @@ $row = mysqli_fetch_array($home_q_res);
 	include '../includes/header2.php';
 	?>
 	<?php
-	if (mysqli_fetch_array($home_q_res) == 0)
+	if (mysqli_num_rows($home_q_res) == 0)
 	{
 	?>
 	<h1 style="margin-top: 40px; margin-left: 60px;">You do not have any active plans.</h1>
@@ -42,8 +42,13 @@ $row = mysqli_fetch_array($home_q_res);
 	?>
 	<h1 style="margin-top: 40px; margin-left: 60px;">Your plans</h1>
 	<div class="container">
+		<?php
+		while ($n_rows > 0)
+		{
+			$row = mysqli_fetch_array($home_q_res);
+		?>
 		<div class="row">
-			<div class="col-xs-4 col-xs-offset-2">
+			<div class="col-xs-12 col-md-4 col-md-offset-2">
 				<div class="panel panel-success">
 						<div class="panel-heading">
 							<div class="row">
@@ -79,15 +84,21 @@ $row = mysqli_fetch_array($home_q_res);
 				</div>
 			</div>
 		</div>
+		<?php
+		$n_rows--;
+		}
+		?>
 	</div>
 	<?php
 	}
-	?><br><br><br><br><br><br><br><br>
-	<div class="row">
+	?>
+	<div class="container-fluid">
+		<div class="row">
 		<div class="col-xs-1 col-xs-offset-11">
 			<a href="createplan.php"><span class="glyphicon glyphicon-plus-sign fa-lg" style="font-size: 40px; color: #1e6f72;"></span></a>
 		</div>
 	</div>
+	</div><br><br><br><br>
 	<?php
 	include '../includes/footer.php';
 	?>

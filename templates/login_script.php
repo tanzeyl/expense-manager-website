@@ -1,10 +1,12 @@
 <?php
 require '../includes/common.php';
+session_start();
 $email = mysqli_real_escape_string($con, $_POST['email']);
 $pw = mysqli_real_escape_string($con, $_POST['password']);
 $pass = md5($pw);
 $email_q = "SELECT * FROM users WHERE email = '$email'";
 $email_q_res = mysqli_query($con, $email_q) or die(mysqli_error($con));
+$_SESSION['email'] = $email;
 if (mysqli_num_rows($email_q_res) == 0)
 {
 	echo "Email does not exist.";

@@ -1,6 +1,8 @@
 <?php
+session_start();
 require '../includes/common.php';
-$home_q = "SELECT * FROM usersplans";
+$home_q = "SELECT * FROM usersplans WHERE reg_em = '{$_SESSION['email']}'";
+print_r($_SESSION);
 $home_q_res = mysqli_query($con, $home_q) or die(mysqli_error($con));
 $n_rows = mysqli_num_rows($home_q_res);
 ?>

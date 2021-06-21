@@ -18,7 +18,7 @@
 			<div class="col-xs-12 col-md-8 col-md-offset-2">
 				<div class="panel">
 					<div class="panel-body">
-						<form method="POST" action="details_script.php details.php">
+						<form method="POST" action="details_script.php">
 						<b>Title</b>
 						<div class="form-group">
 							<input type="text" name="title" class="form-control" placeholder="Enter title (Ex: Trip To Goa" required>
@@ -58,6 +58,10 @@
 						<b>Person 2</b>
 						<div class="form-group">
 							<input type="text" name="person2" class="form-control" required placeholder="You can have at maximum 2 people per plan.">
+						</div>
+						<b>Registered Email ID</b>
+						<div class="form-group">
+							<input type="text" name="reg_em" class="form-control" required placeholder="Enter your correct registered mail.">
 						</div>
 						<button class="btn btn-success btn-block" style="background: #1e6f72; color: white;">Submit</button>
 						</form>

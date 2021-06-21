@@ -14,4 +14,8 @@ if ($row['password'] == $pass and mysqli_num_rows($email_q_res) == 1)
 {
 	echo ("<script>location.href='home.php'</script>");
 }
+else
+{
+	echo "Incorrect Password.";
+}
 ?>

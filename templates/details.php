@@ -18,7 +18,7 @@
 			<div class="col-xs-12 col-md-8 col-md-offset-2">
 				<div class="panel">
 					<div class="panel-body">
-						<form method="POST" action="details_script.php">
+						<form method="POST" action="details_script.php details.php">
 						<b>Title</b>
 						<div class="form-group">
 							<input type="text" name="title" class="form-control" placeholder="Enter title (Ex: Trip To Goa" required>
@@ -51,20 +51,15 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-xs-2 col-xs-offset-10">
-						<button formaction="details.php" class="btn btn-primary">Enter</button>
-							</div>
-						</div>
 						<b>Person 1</b>
 						<div class="form-group">
-							<input type="text" name="person1" class="form-control" required>
+							<input type="text" name="person1" class="form-control" required placeholder="You can have at maximum 2 people per plan.">
 						</div>
 						<b>Person 2</b>
 						<div class="form-group">
-							<input type="text" name="person2" class="form-control" required>
+							<input type="text" name="person2" class="form-control" required placeholder="You can have at maximum 2 people per plan.">
 						</div>
-						<button class="btn btn-success btn-block">Submit</button>
+						<button class="btn btn-success btn-block" style="background: #1e6f72; color: white;">Submit</button>
 						</form>
 					</div>
 				</div>

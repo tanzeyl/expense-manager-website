@@ -30,7 +30,7 @@ $n_rows = mysqli_num_rows($home_q_res);
 				<div class="panel panel-default" style="height: 200px; margin-top: 100px;">
 					<div class="panel-body">
 						<center style="margin-top: 25%;">
-						<a href="createplan.php"><span class="glyphicon glyphicon-plus-sign"></span>Create a new plan</a>
+						<a href="details.php"><span class="glyphicon glyphicon-plus-sign"></span>Create a new plan</a>
 						</center>
 					</div>
 				</div>
@@ -95,7 +95,7 @@ $n_rows = mysqli_num_rows($home_q_res);
 	<div class="container-fluid">
 		<div class="row">
 		<div class="col-xs-1 col-xs-offset-11">
-			<a href="createplan.php"><span class="glyphicon glyphicon-plus-sign fa-lg" style="font-size: 40px; color: #1e6f72;"></span></a>
+			<a href="details.php"><span class="glyphicon glyphicon-plus-sign fa-lg" style="font-size: 40px; color: #1e6f72;"></span></a>
 		</div>
 	</div>
 	</div><br><br><br><br>

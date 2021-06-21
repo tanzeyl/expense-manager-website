@@ -1,5 +1,6 @@
 <?php
 require '../includes/common.php';
+$n = 1;
 $name = mysqli_real_escape_string($con, $_POST['name']);
 $email = mysqli_real_escape_string($con, $_POST['email']);
 $regrex_email = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i";
@@ -13,6 +14,7 @@ $email_q_res = mysqli_query($con, $email_q) or die(mysqli_error($con));
 if (mysqli_num_rows($email_q_res) != 0)
 {
 	echo "<script>alert('Email already exists. Please enter a valid email or login to existing account.')</script>";
+	$n = 0;
 }
 $password = mysqli_real_escape_string($con, $_POST['password']);
 if (strlen($password) <= 6)
@@ -21,7 +23,14 @@ if (strlen($password) <= 6)
 }
 $pass_word = md5($password);
 $phone_number = mysqli_real_escape_string($con, $_POST['phone']);
-$signup_q = "INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone_number`) VALUES (NULL, '$name', '$email', '$pass_word', '$phone_number')";
-$signup_q_res = mysqli_query($con, $signup_q) or die(mysqli_error($con));
-echo ("<script>location.href='home.php'</script>");
+if ($n == 1)
+{
+	$signup_q = "INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone_number`) VALUES (NULL, '$name', '$email', '$pass_word', '$phone_number')";
+	$signup_q_res = mysqli_query($con, $signup_q) or die(mysqli_error($con));
+	echo ("<script>location.href='login.php'</script>");
+}
+else
+{
+	echo ("<script>location.href='login.php'</script>");	
+}
 ?>

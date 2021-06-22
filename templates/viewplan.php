@@ -1,6 +1,7 @@
 <?php
+session_start();
 require '../includes/common.php';
-$home_q = "SELECT * FROM usersplans";
+$home_q = "SELECT * FROM usersplans WHERE reg_em = '{$_SESSION['email']}'";
 $home_q_res = mysqli_query($con, $home_q) or die(mysqli_error($con));
 $row = mysqli_fetch_array($home_q_res);
 ?>
@@ -17,7 +18,7 @@ $row = mysqli_fetch_array($home_q_res);
 </head>
 <body class="bg-color">
 	<?php
-	include '../includes/header2.php';
+	include '../includes/header.php';
 	?>
 	<?php
 	if (mysqli_fetch_array($home_q_res) != 0)
@@ -26,7 +27,7 @@ $row = mysqli_fetch_array($home_q_res);
 	<br><br>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-md-6">
 				<div class="panel panel-success">
 						<div class="panel-heading">
 							<div class="row">
@@ -68,7 +69,7 @@ $row = mysqli_fetch_array($home_q_res);
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-4 col-xs-offset-2">
+			<div class="col-xs-12 col-md-4 col-md-offset-2">
 				<a href="expensedist.php"><button class="btn btn-default btn-lg" style="color: #1e6f72; border: 1px solid #1e6f72;">Expense Distribution</button></a><br><br>
 				<a href="allplans.php"><button class="btn btn-default btn-lg" style="color: #1e6f72; border: 1px solid #1e6f72;">View All Expenses</button></a><br><br>
 				<div class="row">
@@ -100,6 +101,10 @@ $row = mysqli_fetch_array($home_q_res);
 									<b>Upload Bill:</b>
 									<div class="form-group">
 										<input type="file" name="file" class="form-control" required>
+									</div>
+									<b>Plan Name</b>
+									<div class="form-group">
+										<input type="text" name="plan_name" class="form-control" placeholder="This field is case-sensitive." required>
 									</div>
 									<button class="btn btn-default btn-block" style="color: #1e6f72; border: 1px solid #1e6f72;" name="submit" value="upload">Add</button>
 								</form>

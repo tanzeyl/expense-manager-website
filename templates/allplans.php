@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +14,9 @@
 </head>
 <body class="bg-color">
 	<?php
-	include '../includes/header2.php';
+	include '../includes/header.php';
 	require '../includes/common.php';
-	$all_q = "SELECT * FROM expenses";
+	$all_q = "SELECT * FROM expenses WHERE plan_name = '{$_SESSION['plan_name']}' and reg_em = '{$_SESSION['reg_email']}'";
 	$all_q_res = mysqli_query($con, $all_q) or die(mysqli_error($con));
 	$n_rows = mysqli_num_rows($all_q_res);
 	if ($n_rows == 0)

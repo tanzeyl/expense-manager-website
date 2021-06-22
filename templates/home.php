@@ -19,7 +19,7 @@ $n_rows = mysqli_num_rows($home_q_res);
 </head>
 <body class="bg-color">
 	<?php
-	include '../includes/header2.php';
+	include '../includes/header.php';
 	?>
 	<?php
 	if (mysqli_num_rows($home_q_res) == 0)

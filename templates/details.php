@@ -11,7 +11,7 @@
 </head>
 <body class="bg-color">
 	<?php
-	include '../includes/header2.php';
+	include '../includes/header.php';
 	?><br><br>
 	<div class="container">
 		<div class="row">

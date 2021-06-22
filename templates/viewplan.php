@@ -52,14 +52,6 @@ $row = mysqli_fetch_array($home_q_res);
 						</div>
 						<div class="row">
 							<div class="col-xs-3">
-								<b>Remianing Amount:</b>
-							</div>
-							<div class="col-xs-3 col-xs-offset-6">
-								<p>₹ <?php echo $row['i_budget'] ?></p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-3">
 								<b>Date:</b>
 							</div>
 							<div class="col-xs-5 col-xs-offset-4">

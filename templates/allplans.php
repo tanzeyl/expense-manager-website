@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +11,10 @@ session_start();
 </head>
 <body class="bg-color">
 	<?php
+	session_start();
 	include '../includes/header.php';
 	require '../includes/common.php';
-	$all_q = "SELECT * FROM expenses WHERE plan_name = '{$_SESSION['plan_name']}' and reg_em = '{$_SESSION['reg_email']}'";
+	$all_q = "SELECT * FROM expenses WHERE plan_name = '{$_SESSION['plan_name']}'";
 	$all_q_res = mysqli_query($con, $all_q) or die(mysqli_error($con));
 	$n_rows = mysqli_num_rows($all_q_res);
 	if ($n_rows == 0)
@@ -46,7 +44,7 @@ session_start();
 		while ($row = mysqli_fetch_array($all_q_res)) { ?>
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-3">
+					<div class="col-xs-12 col-md-3">
 				<div class="panel panel-default">
 						<div class="panel-heading">
 							<div class="row">
@@ -97,10 +95,17 @@ session_start();
 			</div>
 		</div>
 		</div>
+		<div class="container-fluid">
 		<?php
 		}
 		}
 		?>
+		<div class="row">
+		<div class="col-xs-1 col-xs-offset-11">
+			<a href="viewplan.php"><span class="glyphicon glyphicon-plus-sign fa-lg" style="font-size: 40px; color: #1e6f72;"></span></a>
+		</div>
+	</div>
+	</div><br><br><br><br>
 	<?php
 	include '../includes/footer.php';
 	?>

@@ -17,10 +17,10 @@ if(isset($_POST['submit'])){
 		$allowtypes = array('jpg', 'png', 'pdf');
 		if(in_array($filetype, $allowtypes)){
 			if(move_uploaded_file($_FILES['file']['tmp_name'], $targetfilepath)){
-				$insert = "INSERT INTO `expenses` (`title`, `date`, `amount`, `person`, `file`, `plan_name`, `reg_em`) VALUES ('$title', '$date', '$amount', '$person', '".$filename."', '$plan_name', '$reg_em')";
+				$insert = "INSERT INTO `expenses` (`title`, `date`, `amount`, `person`, `file`, `plan_name`) VALUES ('$title', '$date', '$amount', '$person', '".$filename."', '$plan_name')";
 				$inser_res = mysqli_query($con, $insert) or die(mysqli_error($con));
 			}
 		}
 }
-echo ("<script>location.href='home.php'</script>");
+echo ("<script>location.href='allplans.php'</script>");
 ?>

@@ -59,9 +59,9 @@
 						<div class="form-group">
 							<input type="text" name="person2" class="form-control" required placeholder="You can have at maximum 2 people per plan.">
 						</div>
-						<b>Registered Email ID</b>
+						<b>Registration Email</b>
 						<div class="form-group">
-							<input type="text" name="reg_em" class="form-control" required placeholder="Enter your correct registered mail.">
+							<input type="text" name="reg_em" class="form-control" required placeholder="Enter your correct Email ID.">
 						</div>
 						<button class="btn btn-success btn-block" style="background: #1e6f72; color: white;">Submit</button>
 						</form>

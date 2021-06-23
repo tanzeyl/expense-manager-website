@@ -14,7 +14,15 @@
 	session_start();
 	include '../includes/header.php';
 	require '../includes/common.php';
-	$all_q = "SELECT * FROM expenses WHERE plan_name = '{$_SESSION['plan_name']}'";
+	$q1 = "SELECT id FROM users WHERE email = '{$_SESSION['email']}'";
+	$q1_res = mysqli_query($con, $q1);
+	$row1 = mysqli_fetch_array($q1_res);
+	$id1 = $row1['id'];
+	$q2 = "SELECT user_id FROM usersplans WHERE user_id = '$id1'";
+	$q2_res = mysqli_query($con, $q2);
+	$row2 = mysqli_fetch_array($q2_res);
+	$user_id = $row2['user_id'];
+	$all_q = "SELECT * FROM expenses WHERE user_id = '$user_id'";
 	$all_q_res = mysqli_query($con, $all_q) or die(mysqli_error($con));
 	$n_rows = mysqli_num_rows($all_q_res);
 	if ($n_rows == 0)
@@ -23,7 +31,7 @@
 	<h1 style="margin-top: 40px; margin-left: 60px;">You have not added any expenses yet.</h1>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-md-4 col-md-offset-4">
+			<div class="col-xs-12 col-md-5 col-md-offset-4">
 				<div class="panel panel-default" style="height: 200px; margin-top: 100px;">
 					<div class="panel-body">
 						<center style="margin-top: 25%;">
@@ -52,6 +60,9 @@
 									<center>
 									<p style="text-align: center; font-size: 20px;"><?php echo $row['title']; ?></p>
 									</center>	
+								</div>
+								<div class="col-xs-7">
+									<a href="delete_expenses.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-trash" style="float: right; font-size: 20px; color: red;"></span></a>
 								</div>
 							</div>
 						</div>

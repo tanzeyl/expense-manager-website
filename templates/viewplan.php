@@ -1,9 +1,11 @@
 <?php
 session_start();
 require '../includes/common.php';
-$home_q = "SELECT * FROM usersplans WHERE reg_em = '{$_SESSION['email']}'";
+$home_q = "SELECT * FROM usersplans";
 $home_q_res = mysqli_query($con, $home_q) or die(mysqli_error($con));
 $row = mysqli_fetch_array($home_q_res);
+$plan_q = "SELECT * from usersplans";
+$plan_q_res = mysqli_query($con, $plan_q);
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,48 +22,10 @@ $row = mysqli_fetch_array($home_q_res);
 	<?php
 	include '../includes/header.php';
 	?>
-	<?php
-	if (mysqli_fetch_array($home_q_res) != 0)
-	{
-	?>
 	<br><br>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-6">
-				<div class="panel panel-success">
-						<div class="panel-heading">
-							<div class="row">
-								<div class="col-xs-5">
-									<center>
-									<p style="text-align: center; font-size: 20px;"><?php echo $row['title']; ?></p>
-									</center>	
-								</div>
-								<div class="col-xs-3" style="float: right;">
-									<p style="font-size: 20px;"><span class = "glyphicon glyphicon-user"></span><?php echo " ".$row['n_people']; ?></p>
-								</div>
-							</div>
-						</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-xs-3">
-								<b>Budget:</b>
-							</div>
-							<div class="col-xs-3 col-xs-offset-6">
-								<p>₹ <?php echo $row['i_budget'] ?></p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-3">
-								<b>Date:</b>
-							</div>
-							<div class="col-xs-5 col-xs-offset-4">
-								<p><?php echo $row['_from']." to ".$row['_to'] ?></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-				<a href="allplans.php"><button class="btn btn-default btn-lg" style="color: #1e6f72; border: 1px solid #1e6f72;">View All Expenses</button></a><br><br>
+	<div class="container-fluid">
+	<a href="allplans.php"><button class="btn btn-default btn-lg" style="color: #1e6f72; border: 1px solid #1e6f72;">View All Expenses</button></a>
+	</div><br><br>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="panel panel-success">
@@ -78,7 +42,7 @@ $row = mysqli_fetch_array($home_q_res);
 									</div>
 									<b>Date</b>
 									<div class="form-group">
-										<input type="text" name="date" class="form-control" placeholder="Between <?php echo $row['_from']; ?> and <?php echo $row['_to']; ?>" required>
+										<input type="date" name="date" class="form-control">
 									</div>
 									<b>Amount Spent</b>
 									<div class="form-group">
@@ -106,9 +70,6 @@ $row = mysqli_fetch_array($home_q_res);
 		</div>
 	</div>
 	<br><br>
-	<?php
-	}
-	?>
 	<?php
 	include '../includes/footer.php';
 	?>

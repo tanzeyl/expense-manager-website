@@ -2,9 +2,7 @@
 session_start();
 require '../includes/common.php';
 $home_q = "SELECT * FROM usersplans WHERE reg_em = '{$_SESSION['email']}'";
-print_r($_SESSION);
 $home_q_res = mysqli_query($con, $home_q) or die(mysqli_error($con));
-$n_rows = mysqli_num_rows($home_q_res);
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,12 +43,11 @@ $n_rows = mysqli_num_rows($home_q_res);
 	<h1 style="margin-top: 40px; margin-left: 60px;">Your plans</h1>
 	<div class="container">
 		<?php
-		while ($n_rows > 0)
+		while ($row = mysqli_fetch_array($home_q_res))
 		{
-			$row = mysqli_fetch_array($home_q_res);
 		?>
 		<div class="row">
-			<div class="col-xs-12 col-md-4 col-md-offset-2">
+			<div class="col-xs-12 col-md-5 col-md-offset-2">
 				<div class="panel panel-success">
 						<div class="panel-heading">
 							<div class="row">
@@ -61,6 +58,9 @@ $n_rows = mysqli_num_rows($home_q_res);
 								</div>
 								<div class="col-xs-3" style="float: right;">
 									<p style="font-size: 20px;"><span class = "glyphicon glyphicon-user"></span><?php echo " ".$row['n_people']; ?></p>
+								</div>
+								<div class="col-xs-4">
+									<a href="delete_plans.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-trash" style="float: right; font-size: 20px; color: red;"></span></a>
 								</div>
 							</div>
 						</div>
@@ -87,7 +87,6 @@ $n_rows = mysqli_num_rows($home_q_res);
 			</div>
 		</div>
 		<?php
-		$n_rows--;
 		}
 		?>
 	</div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: remotemysql.com
--- Generation Time: Jun 21, 2021 at 09:12 AM
+-- Generation Time: Jun 23, 2021 at 07:34 AM
 -- Server version: 8.0.13-4
 -- PHP Version: 7.2.24-0ubuntu0.18.04.6
 
@@ -28,12 +28,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `expenses` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL,
   `amount` int(8) NOT NULL,
   `person` varchar(255) NOT NULL,
-  `file` longblob
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `file` longblob,
+  `plan_name` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -54,9 +57,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone_number`) VALUES
-(20, 'Shubhank Singhal', 'shubhank.singhal98@gmail.com', 'c5fde9de2d29789a81d1bc0f16292048', '8958816156'),
-(21, 'Khizra Khan', 'eminemia78@gmail.com', 'e8dc4081b13434b45189a720b77b6818', '8006403718'),
-(26, 'Tanzeel Khan', 'ktanzeel80@gmail.com', 'bc2ff223c07ee20f7205f859cf4e8935', '8006403718');
+(1, 'Tanzeel Khan', 'ktanzeel80@gmail.com', 'bc2ff223c07ee20f7205f859cf4e8935', '8006403718'),
+(2, 'Khizra Khan', 'eminemia78@gmail.com', 'bc2ff223c07ee20f7205f859cf4e8935', '9870661375');
 
 -- --------------------------------------------------------
 
@@ -66,6 +68,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone_number`) VALUES
 
 CREATE TABLE `usersplans` (
   `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `_from` varchar(255) NOT NULL,
   `_to` varchar(255) NOT NULL,
@@ -77,15 +80,15 @@ CREATE TABLE `usersplans` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usersplans`
---
-
-INSERT INTO `usersplans` (`id`, `title`, `_from`, `_to`, `i_budget`, `n_people`, `person1`, `person2`, `reg_em`) VALUES
-(3, 'Trip to Goa', '2021-06-12', '2021-06-19', 1200, 2, 'Tanzeel', 'Drishti', 'ktanzeel80@gmail.com');
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `expenses`
+--
+ALTER TABLE `expenses`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `users`
@@ -97,23 +100,46 @@ ALTER TABLE `users`
 -- Indexes for table `usersplans`
 --
 ALTER TABLE `usersplans`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `expenses`
+--
+ALTER TABLE `expenses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `usersplans`
 --
 ALTER TABLE `usersplans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `expenses`
+--
+ALTER TABLE `expenses`
+  ADD CONSTRAINT `expenses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usersplans` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `usersplans`
+--
+ALTER TABLE `usersplans`
+  ADD CONSTRAINT `usersplans_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

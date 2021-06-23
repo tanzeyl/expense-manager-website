@@ -46,7 +46,7 @@
 	} else
 	{
 	?>
-	<h1 style="margin-top: 40px; margin-left: 60px;">Your expenses</h1>
+	<h1 style="margin-top: 40px; margin-left: 60px;">All of your expenses</h1>
 	
 		<?php
 		while ($row = mysqli_fetch_array($all_q_res)) { ?>
@@ -89,6 +89,14 @@
 							</div>
 							<div class="col-xs-4 col-xs-offset-4">
 								<p><?php echo $row['date']; ?></p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-4">
+								<b>Plan</b>
+							</div>
+							<div class="col-xs-4 col-xs-offset-4">
+								<p><?php echo $row['plan_name']; ?></p>
 							</div>
 						</div>
 						</div>

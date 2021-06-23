@@ -14,7 +14,7 @@
 				if (isset($_SESSION['email']))
 				{
 				?>
-				<li><a href="signup.php"><span class="glyphicon glyphicon-info-sign"></span>About Us</a></li>
+				<li><a href="about.php"><span class="glyphicon glyphicon-info-sign"></span>About Us</a></li>
 				<li><a href="changepassword.php"><span class="glyphicon glyphicon-cog"></span>Change Password</a></li>
 				<li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
 				<?php

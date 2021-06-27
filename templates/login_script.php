@@ -2,6 +2,7 @@
 require '../includes/common.php';
 session_start();
 $email = mysqli_real_escape_string($con, $_POST['email']);
+$_SESSION['email'] = $email;
 $pw = mysqli_real_escape_string($con, $_POST['password']);
 $pass = md5($pw);
 $email_q = "SELECT * FROM users WHERE email = '$email'";

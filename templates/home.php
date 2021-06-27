@@ -86,17 +86,18 @@ $home_q_res = mysqli_query($con, $home_q) or die(mysqli_error($con));
 		<?php
 		}
 		?>
-	</div>
-	<?php
-	}
-	?>
+		
 	<div class="container-fluid">
 		<div class="row">
 		<div class="col-xs-1 col-xs-offset-11">
 			<a href="details.php"><span class="glyphicon glyphicon-plus-sign fa-lg" style="font-size: 40px; color: #1e6f72;"></span></a>
 		</div>
 	</div>
-	</div><br><br><br><br>
+	</div>
+	</div>
+	<?php
+	}
+	?><br><br><br><br>
 	<?php
 	include '../includes/footer.php';
 	?>

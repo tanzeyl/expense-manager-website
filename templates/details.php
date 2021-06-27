@@ -11,6 +11,7 @@
 </head>
 <body class="bg-color">
 	<?php
+	session_start();
 	include '../includes/header.php';
 	?><br><br>
 	<div class="container">
@@ -27,7 +28,7 @@
 							<div class="col-xs-6">
 								<b>From</b>
 								<div class="form-group">
-									<input type="date" name="from" class="form-control" min="2019-04-01" max="2022-01-01" required>
+									<input type="date" name="from" class="form-control" min="<?php date("Y/m/d")?>" max="2022-01-01" required>
 								</div>
 							</div>
 							<div class="col-xs-6">
@@ -38,16 +39,10 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">
+							<div class="col-xs-12">
 								<b>Initial Budget</b>
 								<div class="form-group">
-									<input type="text" name="i_budget" class="form-control" required>
-								</div>
-							</div>
-							<div class="col-xs-4">
-								<b>Number of people</b>
-								<div class="form-group">
-									<input type="text" name="n_people" class="form-control" required min="1" max="2">
+									<input type="text" name="i_budget" class="form-control" required placeholder="Enter the budget to begin with.">
 								</div>
 							</div>
 						</div>

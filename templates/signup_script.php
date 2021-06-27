@@ -1,9 +1,11 @@
 <?php
+session_start();
 require '../includes/common.php';
 $n = 1;
 $name = mysqli_real_escape_string($con, $_POST['name']);
 $email = mysqli_real_escape_string($con, $_POST['email']);
 $regrex_email = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i";
+$_SESSION['email'] = $email;
 if (!preg_match($regrex_email, $email))
 {
 	echo 'This email is invalid.';
@@ -27,10 +29,10 @@ if ($n == 1)
 {
 	$signup_q = "INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone_number`) VALUES (NULL, '$name', '$email', '$pass_word', '$phone_number')";
 	$signup_q_res = mysqli_query($con, $signup_q) or die(mysqli_error($con));
-	echo ("<script>location.href='login.php'</script>");
+	echo ("<script>location.href='home.php'</script>");
 }
 else
 {
-	echo ("<script>location.href='login.php'</script>");	
+	echo ("<script>location.href='home.php'</script>");	
 }
 ?>

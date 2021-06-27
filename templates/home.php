@@ -56,10 +56,7 @@ $home_q_res = mysqli_query($con, $home_q) or die(mysqli_error($con));
 									<p style="text-align: center; font-size: 20px;"><?php echo $row['title']; ?></p>
 									</center>	
 								</div>
-								<div class="col-xs-3" style="float: right;">
-									<p style="font-size: 20px;"><span class = "glyphicon glyphicon-user"></span><?php echo " ".$row['n_people']; ?></p>
-								</div>
-								<div class="col-xs-4">
+								<div class="col-xs-4 col-xs-offset-2">
 									<a href="delete_plans.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-trash" style="float: right; font-size: 20px; color: red;"></span></a>
 								</div>
 							</div>

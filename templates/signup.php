@@ -36,7 +36,7 @@
 							</div>
 							<b>Phone:</b>
 							<div class="form-group">
-								<input type="tel" name="phone" class="form-control" placeholder="Enter a valid Phone Number" pattern="[0-9]{10}" required>
+								<input type="tel" name="phone" class="form-control" placeholder="Enter a 10 digit phone number" pattern="[0-9]{10}" required>
 							</div>
 							<button class="btn btn-block" style="background: #1e6f72; color: white;">Submit</button><br>
 						</form>

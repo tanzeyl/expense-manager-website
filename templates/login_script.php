@@ -6,9 +6,8 @@ $pw = mysqli_real_escape_string($con, $_POST['password']);
 $pass = md5($pw);
 $email_q = "SELECT * FROM users WHERE email = '$email'";
 $email_q_res = mysqli_query($con, $email_q) or die(mysqli_error($con));
-$row = mysqli_fetch_array($email_q_res);
-$_SESSION['email'] = $email;
 $_SESSION['msg'] = 0;
+$row = mysqli_fetch_array($email_q_res);
 if (mysqli_num_rows($email_q_res))
 {
 	if($row['password'] != $pass)

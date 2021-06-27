@@ -34,7 +34,7 @@
 			<div class="col-xs-12 col-md-5 col-md-offset-4">
 				<div class="panel panel-default" style="height: 200px; margin-top: 100px;">
 					<div class="panel-body">
-						<center style="margin-top: 25%;">
+						<center style="margin-top: 20%;">
 						<a href="viewplan.php"><span class="glyphicon glyphicon-plus-sign"></span>Add a new expense.</a>
 						</center>
 					</div>
@@ -115,15 +115,16 @@
 		</div>
 		</div>
 		<div class="container-fluid">
-		<?php
-		}
-		}
-		?>
-		<div class="row">
+			<div class="row">
 		<div class="col-xs-1 col-xs-offset-11">
 			<a href="viewplan.php"><span class="glyphicon glyphicon-plus-sign fa-lg" style="font-size: 40px; color: #1e6f72;"></span></a>
 		</div>
 	</div>
+		<?php
+		}
+		}
+		?>
+		
 	</div><br><br><br><br>
 	<?php
 	include '../includes/footer.php';

@@ -15,7 +15,8 @@ $email_q = "SELECT id from users WHERE email = '$email'";
 $email_q_res = mysqli_query($con, $email_q) or die(mysqli_error($con));
 if (mysqli_num_rows($email_q_res) != 0)
 {
-	echo "<script>alert('Email already exists. Please enter a valid email or login to existing account.')</script>";
+	echo "Email already exists. Please enter a valid email or login to existing account.";
+	echo ("<script>location.href='signup.php'</script>");
 	$n = 0;
 }
 $password = mysqli_real_escape_string($con, $_POST['password']);

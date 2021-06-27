@@ -6,18 +6,25 @@ $pw = mysqli_real_escape_string($con, $_POST['password']);
 $pass = md5($pw);
 $email_q = "SELECT * FROM users WHERE email = '$email'";
 $email_q_res = mysqli_query($con, $email_q) or die(mysqli_error($con));
-$_SESSION['email'] = $email;
-if (mysqli_num_rows($email_q_res) == 0)
-{
-	echo "Email does not exist.";
-}
 $row = mysqli_fetch_array($email_q_res);
-if ($row['password'] == $pass and mysqli_num_rows($email_q_res) == 1)
+$_SESSION['email'] = $email;
+$_SESSION['msg'] = 0;
+if (mysqli_num_rows($email_q_res))
 {
-	echo ("<script>location.href='home.php'</script>");
+	if($row['password'] != $pass)
+	{
+		$_SESSION['msg'] = "Incorrect Password, try again.";
+		echo ("<script>location.href='login.php'</script>");
+	}
+	else if($row['password'] == $pass and $row['email'] == $email)
+	{
+		echo ("<script>location.href='home.php'</script>");	
+	}
+	
 }
 else
 {
-	echo "Incorrect Password.";
+	$_SESSION['msg'] = "Email does not exist.";	
+	echo ("<script>location.href='login.php'</script>");
 }
 ?>

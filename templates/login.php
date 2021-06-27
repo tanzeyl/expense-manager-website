@@ -1,3 +1,6 @@
+<?php
+require '../includes/common.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +16,16 @@
 	<?php
 	include '../includes/header.php';
 	?><br><br><br><br>
+	<?php
+	session_start();
+	if($_SESSION['msg'])
+	{
+	?>
+	<h2 style="color: red; text-align: center;"><?php echo $_SESSION['msg']; ?></h2>
+	<?php
+	$_SESSION['msg'] = 0;
+	}
+	?>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-4 col-md-offset-4">

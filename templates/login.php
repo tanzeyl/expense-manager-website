@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../includes/common.php';
 ?>
 <!DOCTYPE html>
@@ -17,7 +18,6 @@ require '../includes/common.php';
 	include '../includes/header.php';
 	?><br><br><br><br>
 	<?php
-	session_start();
 	if($_SESSION['msg'])
 	{
 	?>

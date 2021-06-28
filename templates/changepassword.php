@@ -1,3 +1,7 @@
+<?php
+session_start();
+require '../includes/common.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +17,15 @@
 	<?php
 	include '../includes/header.php';
 	?><br><br>
+	<?php
+	if($_SESSION['message'])
+	{
+	?>
+	<h2 style="color: red; text-align: center;"><?php echo $_SESSION['message']; ?></h2>
+	<?php
+	$_SESSION['msg'] = 0;
+	}
+	?>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-4 col-md-offset-4">
@@ -33,6 +46,10 @@
 							<b>Confirm New Password</b>
 							<div class="form-group">
 								<input type="password" name="new_c" class="form-control" placeholder="Re-enter new passowrd" pattern=".{8,}" autocomplete="new_c" required>
+							</div>
+							<b>Registration Email</b>
+							<div class="form-group">
+								<input type="text" name="email" class="form-control" placeholder="Enter your correct Email ID." required>
 							</div>
 							<button class="btn bt-col btn-block" style="color: white; border: 1px solid #1e6f72; background: #1e6f72;" name="submit" value="upload">Add</button><br>
 						</form>
